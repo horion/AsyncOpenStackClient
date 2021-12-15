@@ -98,8 +98,8 @@ class AuthPassword(AuthModel):
         return self.token_expires_at - time() > 0
 
     async def get_token(self):
-        async with aiohttp.ClientSession(verify_ssl=False) as session:
-            async with session.post(self._auth_endpoint, json=self._auth_payload, headers=self.headers) as response:
+        async with aiohttp.ClientSession() as session:
+            async with session.post(self._auth_endpoint, json=self._auth_payload, headers=self.headers, ssl=False) as response:
                 result = await response.json()
                 return (
                     response.headers['X-Subject-Token'],
