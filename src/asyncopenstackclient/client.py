@@ -28,9 +28,10 @@ class Client:
                      },
             json_encode_body=True,
             timeout=timeout,
+            ssl_verify=False
         )
         for resource in self.resources:
-            self.api.add_resource(resource_name=resource, resource_class=AsyncResource, ssl_verify=0)
+            self.api.add_resource(resource_name=resource, resource_class=AsyncResource)
 
     @property
     def api_url(self):

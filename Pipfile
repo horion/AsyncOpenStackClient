@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 tox = "*"
 aiohttp = "*"
-simple-rest-client = "~=1.1.2"
+simple-rest-client = "*"
 python-dateutil = "*"
 simplejson = "*"
 
