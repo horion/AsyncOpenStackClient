@@ -30,7 +30,7 @@ class Client:
             timeout=timeout,
         )
         for resource in self.resources:
-            self.api.add_resource(resource_name=resource, resource_class=AsyncResource)
+            self.api.add_resource(resource_name=resource, resource_class=AsyncResource,ssl_verify=False)
 
     @property
     def api_url(self):
